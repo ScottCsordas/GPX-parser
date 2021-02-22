@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>2750 A3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="CHANGE ME">
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- Custom CSS End -->
+</head>
+<!--<body>
+    <h3>Download test</h3>
+    If the A3 stub is running and simple.gpx exists in the uploads/ directory on the server, then clicking on the link below will download it from the server.<br>
+    <a href="/uploads/simple.gpx">simple.gpx</a>
+    <hr>
+    <div id="blah">I am blah</div>
+    <hr>
+    <form ref='someform'
+          id='someform'>
+          <div class="form-group">
+                <label for="entryBox">Last Name</label>
+                <input type="text" class="form-control" id="entryBox" value="Value" placeholder="Placeholder">
+            </div>
+        <div class="form-group">
+            <input type='submit' class="btn btn-secondary">
+        </div>
+    </form>
+    <script src="/index.js"></script>
+</body>-->
+<br>
+<body>
+    <h3> File Log Panel</h3>
+    <div class = "scrollable">
+      <table id = "fileTable">
+        <thead>
+          <tr>
+            <th> File Name </th>
+            <th> Version </th>
+            <th> Creator </th>
+            <th> Number of Waypoints </th>
+            <th> Number of Routes </th>
+            <th> Number of Tracks </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <br>
+    <div id = "fileupload">
+      <button id = "uploadButton">
+        upload
+      </button>
+      <input type = "file" id = "fileselect"></input>
+    </div>
+</body>
+<hr>
+<body>
+    <h3> GPX view Panel</h3>
+    <div>
+      <select id = "fileDropDown"> </select>
+      <button id = "showButton">
+        Show Components
+      </button>
+    </div>
+    <div class = "scrollable">
+      <br>
+      <table id = "GPXTable">
+        <thead>
+          <tr>
+            <th> Component </th>
+            <th> Name </th>
+            <th> Number of Points </th>
+            <th> Length </th>
+            <th> Loop </th>
+          </tr>
+        </thead>
+      </table>
+      <br>
+    </div>
+    <div>
+      <select id = "components"> </select>
+      <button id = "showDetails">
+        Show Route Attributes
+      </button>
+      <button id = "showTrack">
+        Show Track Attributes
+      </button>
+    <div>
+      <br>
+      <input type="text" class="form-control" value="new name" id="newName">
+      <br>
+      <button id = "changeName">
+        Change Route Name
+      </button>
+      <button id = "changeTName">
+        Change Track Name
+      </button>
+    </div>
+    </div>
+    <hr>
+    <form>
+      <input type="submit" class="btn btn-secondary" id="createRt" value="Create Route">
+        <br>
+      Enter Name
+      <input type="text" class="form-control" value="name" id="routeName">
+      <br>
+      <h5>Create Waypoints</h5>
+      Enter Waypoint Name
+      <input type="text" class="form-control" value="name" id="wp1">
+      Enter Waypoint Name
+      <input type="text" class="form-control" value="name" id="wp2">
+
+    </form>
+</body>
+<hr>
+<body>
+    <h3> Additional Panel</h3>
+    <form>
+      <input type="submit" class="btn btn-secondary" id="createGPXdoc" value="Create GPX Doc">
+      <br>
+      Enter File Name
+      <input type="text" class="form-control" value="name"  id="enterFileName">
+      <br>
+      <h5>Create Waypoints</h5>
+      Enter Waypoint Name
+      <input type="text" class="form-control" value="name" id="wp3">
+      Enter Waypoint Name
+      <input type="text" class="form-control" value="name" id="wp4">
+      <br>
+
+    </form>
+    <hr>
+    <h3> Find Path </h3>
+    Enter Starting Latitude
+    <input type="text" class="form-control" value="0"  id="startLat">
+    Enter Starting Longitude
+    <input type="text" class="form-control" value="0"  id="startLon">
+    Enter End Latitude
+    <input type="text" class="form-control" value="0"  id="endLat">
+    Enter End Longitude
+    <input type="text" class="form-control" value="0"  id="endLon">
+    <br>
+    <input type="submit" class="btn btn-secondary" id="search" value="Search">
+    <hr>
+    <script src="/index.js"></script>
+    <h3>Database Panel</h3>
+    <div id = "dataBase">
+      Username
+      <input type="text" class="form-control" value=""  id="username">
+      Password
+      <input type="text" class="form-control" value=""  id="password">
+      <br>
+      <button id = "login">
+        Login
+      </button>
+      <br>
+      <br>
+      <button id = "store" style="display: none;">Store All Files</button>
+      <br>
+      <button id = "clear" style="display: none;">Clear ALL Data</button>
+      <br>
+      <button id = "display" style="display: none;">Display DB Status</button>
+      <br>
+    </div>
+    <hr>
+</body>
+</html>
